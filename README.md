@@ -214,13 +214,27 @@ Examples:
 
 ### 5. Complex Device Driver
 
-A higher-level driver that combines multiple lower-level modules.
+A Complex Device Driver is a special driver layer used for hardware features, control logic, or device behaviors that do not clearly fit into the other driver categories such as Component Driver, Device Driver, or Module Driver.
+
+In the RAV architecture, a Complex Device Driver is used when a function is too hardware-specific, too project-specific, or too tightly coupled with MCU peripherals to be cleanly classified as a normal reusable driver.
+
+In many embedded projects, these features are often called directly from the Application Layer through HAL APIs. However, when the logic becomes large, repetitive, or difficult to maintain, it can be wrapped into a Complex Device Driver.
+
+Typical responsibilities of a Complex Device Driver include:
+
+- Handling hardware-specific control sequences
+- Combining multiple HAL peripherals in one function
+- Managing special timing requirements
+- Handling project-specific hardware behavior
+- Providing a wrapper around direct HAL calls
+- Managing interrupt-related hardware behavior
+- Controlling mixed peripheral features
+- Providing a cleaner interface for application code
 
 Examples:
 
-- ...
-- ...
-- ...
+- No example is currently available.
+- This category is reserved for future drivers that do not clearly fit into Device Driver, Module Driver, or Calculation Driver.
 
 ---
 
