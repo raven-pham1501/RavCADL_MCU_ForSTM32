@@ -130,6 +130,7 @@ Typical responsibilities of a Calculation Driver include:
 - Error compensation
 - Threshold checking
 - Algorithm state management
+- ...
 
 Examples of Calculation Drivers include:
 
@@ -143,15 +144,45 @@ Examples of Calculation Drivers include:
 - Temperature conversion driver
 - Encoder position calculation driver
 - Battery percentage estimation driver
+- ...
 
 #### Device Driver (DD)
 
-Drivers for a specific device or IC.
+Device Driver is a software layer used to control a specific electronic device, IC, sensor, actuator, or controller chip.
 
-Examples:
+Unlike Component Driver, which may describe a general type of component, Device Driver is usually written for a specific part number or a specific hardware device with its own register map, command set, timing requirement, or communication behavior.
 
-- ...
-- ...
+In the RAV architecture, the Device Driver hides the low-level details of a device and provides clear APIs for the upper layers. The application does not need to know how to access device registers, send device-specific commands, or follow the required communication sequence.
+
+Device Driver usually depends on lower-level communication drivers such as I2C, SPI, UART, CAN, GPIO, or timer HAL drivers.
+
+Typical responsibilities of a Device Driver include:
+
+- Device initialization
+- Device register read/write
+- Device command handling
+- Configuration management
+- Device status checking
+- Data read/write operation
+- Interrupt or event handling
+- Error detection
+- Device-specific timing control
+- Conversion of raw device data into usable values
+- Power mode control
+- Self-test or diagnostic handling
+
+Examples of Device Drivers include:
+
+- PCF8574 I2C GPIO expander driver
+- MPU6050 IMU sensor driver
+- DS3231 RTC driver
+- BMP280 pressure sensor driver
+- SSD1306 OLED controller driver
+- MCP2515 CAN controller driver
+- W25Qxx SPI Flash driver
+- ADS1115 ADC driver
+- MAX7219 LED matrix driver
+- L298N motor driver IC driver
 - ...
 
 #### Module Driver (MD)
