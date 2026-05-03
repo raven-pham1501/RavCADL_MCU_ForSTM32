@@ -108,13 +108,41 @@ Drivers are divided conceptually into:
 
 #### Calculation Driver (CD)
 
-Drivers for calculation method or algorithm.
+Calculation Driver is a reusable software layer that contains calculation methods, mathematical processing, or algorithmic logic used by the application.
 
-Examples:
+Unlike Module Driver or Device Driver, Calculation Driver does not directly control hardware. Instead, it receives input data from the application or other drivers, processes that data using a defined algorithm, and returns calculated results in a consistent format.
 
-- ...
-- ...
-- ...
+In the RAV architecture, the Calculation Driver helps keep mathematical formulas and processing logic separated from the main application code. This makes the application easier to read, test, reuse, and maintain.
+
+Calculation Driver may be used together with other drivers.
+
+Typical responsibilities of a Calculation Driver include:
+
+- Mathematical formula implementation
+- Unit conversion
+- Sensor data conversion
+- Signal processing
+- Filtering
+- Calibration calculation
+- Linear interpolation
+- Lookup table processing
+- Speed, distance, angle, or position calculation
+- Error compensation
+- Threshold checking
+- Algorithm state management
+
+Examples of Calculation Drivers include:
+
+- Speed calculation driver
+- Distance conversion driver
+- Moving average filter driver
+- Low-pass filter driver
+- PID calculation driver
+- Sensor calibration driver
+- ADC-to-voltage conversion driver
+- Temperature conversion driver
+- Encoder position calculation driver
+- Battery percentage estimation driver
 
 #### Device Driver (DD)
 
