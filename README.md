@@ -179,6 +179,8 @@ Examples:
 - Custom UART protocol
 - Custom CAN frame protocol
 
+---
+
 ### 5. Complex Device Driver
 
 A higher-level driver that combines multiple lower-level modules.
@@ -191,7 +193,7 @@ Examples:
 
 ---
 
-### 5. HAL Layer
+### 6. HAL Layer
 
 The HAL layer is provided by STM32Cube HAL.
 
@@ -207,7 +209,7 @@ The user is expected to configure STM32 peripherals using STM32CubeMX or manuall
 
 ---
 
-### 6. REG Layer
+### 7. REG Layer
 
 The register layer is the lowest software layer.
 
