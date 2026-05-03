@@ -2,7 +2,9 @@
 
 Raven Collection And Development Library is a personal embedded C library collection for STM32-based projects.
 
-The purpose of this library is to organize reusable peripheral drivers into a clean layered architecture. The structure is inspired by common embedded software architecture and FSP-like driver organization, where application code does not directly control low-level hardware details.
+The purpose of this library is to organize reusable peripheral drivers into a clean layered architecture. The architecture is inspired by AUTOSAR and Renesas FSP architectural concepts, where application logic is separated from reusable driver layers and low-level hardware access.
+
+This library is not intended to be a full AUTOSAR-compliant implementation or a direct clone of Renesas FSP. Instead, it adapts their layered architecture ideas into a lightweight embedded C library structure for STM32 HAL-based projects.
 
 This project currently targets STM32 HAL-based projects and is designed to be easy to port across STM32 families.
 
