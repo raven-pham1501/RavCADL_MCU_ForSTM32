@@ -108,7 +108,7 @@ Drivers are divided conceptually into:
 
 #### Calculation Driver (CD)
 
-A driver for calculation method or algorithm.
+Drivers for calculation method or algorithm.
 
 Examples:
 
@@ -118,7 +118,7 @@ Examples:
 
 #### Device Driver (DD)
 
-A driver for a specific device or IC.
+Drivers for a specific device or IC.
 
 Examples:
 
@@ -128,13 +128,28 @@ Examples:
 
 #### Module Driver (MD)
 
-....
+The Module Driver is a middleware-like layer that is closer to OSI Layer 2, the Data Link Layer.
+
+In the RAV architecture, this layer is responsible for defining and handling communication data frames between low-level communication drivers and the application layer. It does not only transmit raw bytes, but also defines how data is packed, validated, decoded, and mapped into meaningful information. However, depending on the protocol design, the Module Driver may also contain some application-specific behavior, such as mapping command IDs or payload data into application-level meanings.
+
+Typical responsibilities of a Module Driver include:
+- Frame format definition
+- Message ID or command ID handling
+- Payload length management
+- Payload encoding and decoding
+- Checksum or CRC validation
+- Transmit and receive state machines
+- Timeout handling
+- Mapping received payload data into application-level signals or parameters
 
 Examples:
-
-- ...
-- ...
-- ...
+- RS-232
+- RS-485
+- CAN
+- LIN
+- Modbus over UART/RS-485
+- Custom UART protocol
+- Custom CAN frame protocol
 
 ### 5. Complex Device Driver
 
